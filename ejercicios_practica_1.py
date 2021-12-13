@@ -17,14 +17,11 @@ def ej1():
     # Crear un diccionario vacio
     # el diccionario vacio debe llamarse "stock"
     
-    # stock = ....
-
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
     # tuercas = 150
     # arandelas = 300
-
     # Los nombres tornillos, tuercas y arandelas
     # son las claves (keys) del diccionario
     # mientras que las cantidades son los valores (values)
@@ -32,7 +29,11 @@ def ej1():
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-
+    stock = {}
+    stock['tornillos'] = 100
+    stock['tuercas'] = 150
+    stock['arandelas'] = 300
+    print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,7 +41,7 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -66,7 +67,21 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-
+    while True:
+        v1 = input('Que producto desea modificar? Ingrese tornillos, tuercas, arandelas o fin para salir.\n')
+        if v1 in stock or v1 == 'fin':
+            if v1 == 'fin':
+                print(f'El stock final es: {stock}')
+                break
+            v2 = int(input('Ingrese la cantidad.'))
+            if v1 == 'tornillos':
+                stock['tornillos'] += v2
+            elif v1 == 'tuercas':
+                stock['tuercas'] + v2
+            elif v1 == 'arandelas':
+                stock['arandelas'] += v2
+            else:
+                print('Opcion inexistente, el programa finalizara.')
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
